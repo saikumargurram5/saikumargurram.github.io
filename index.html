@@ -3,181 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Kumar Gurram | Senior SDET Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sai Kumar Gurram | Senior QA Automation Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --primary-dark: #1a1a1a;
-            --accent-blue: #0056b3;
-            --light-gray: #f4f7f6;
-            --text-main: #333333;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --bg: #ffffff;
+            --card-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- Navigation / Header --- */
+        /* --- Navigation --- */
         nav {
-            background: #fff;
-            padding: 1rem 10%;
+            padding: 1.5rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
         }
-        .logo { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary-dark); font-size: 1.2rem; }
+        .logo { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); font-size: 1.4rem; letter-spacing: -1px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 6rem 10%;
-            background: linear-gradient(to right, #ffffff, #f9f9f9);
-            text-align: left;
-        }
-        .hero h1 { font-family: 'Poppins', sans-serif; font-size: 3.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; color: #666; max-width: 800px; margin-bottom: 2rem; }
-        .hero-tags .tag {
-            display: inline-block;
-            background: var(--light-gray);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin-right: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent-blue);
-        }
+        /* --- Hero --- */
+        header { padding: 6rem 8% 4rem; max-width: 1200px; }
+        header h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); line-height: 1.1; margin-bottom: 1.5rem; }
+        header p { font-size: 1.25rem; color: var(--text-light); max-width: 800px; }
 
-        /* --- Sections Layout --- */
-        .section { padding: 4rem 10%; }
-        .section h2 { 
-            font-family: 'Poppins', sans-serif; 
-            font-size: 2rem; 
-            margin-bottom: 2.5rem; 
-            color: var(--primary-dark);
-            border-bottom: 3px solid var(--accent-blue);
-            display: inline-block;
-        }
+        /* --- Summary Section --- */
+        .summary-section { margin: 0 8% 4rem; padding: 3rem; background: var(--primary); color: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1); }
+        .summary-section h2 { font-family: 'Poppins'; margin-bottom: 1rem; color: #fff; font-size: 1.8rem; }
+        .summary-section p { opacity: 0.9; font-size: 1.05rem; line-height: 1.8; }
 
-        /* --- Expertise Grid --- */
+        /* --- Skill Matrix --- */
+        .section { padding: 4rem 8%; }
+        .section h2 { font-family: 'Poppins'; font-size: 1.8rem; margin-bottom: 2.5rem; position: relative; }
+        .section h2::after { content: ""; display: block; width: 50px; height: 4px; background: var(--accent); margin-top: 10px; border-radius: 2px; }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card {
-            background: #fff;
-            padding: 2rem;
-            border: 1px solid #eee;
-            transition: 0.3s;
-            border-radius: 4px;
-        }
-        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
-        .card h3 { margin-bottom: 1rem; color: var(--accent-blue); }
+        .card { background: var(--card-bg); padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 30px rgba(0,0,0,0.05); }
+        .card h3 { color: var(--accent); font-family: 'Poppins'; margin-bottom: 1.2rem; font-size: 1.3rem; }
+        
+        .skill-tag { display: inline-block; background: #fff; border: 1px solid #cbd5e1; padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin: 4px; color: var(--text-dark); }
 
-        /* --- Skill Bars (Google Site Style) --- */
-        .skill-container { margin-bottom: 1.5rem; }
-        .skill-name { font-weight: 600; margin-bottom: 5px; display: block; }
-        .skill-bar { height: 8px; background: #eee; border-radius: 10px; position: relative; }
-        .skill-fill { height: 100%; background: var(--accent-blue); border-radius: 10px; }
+        /* --- Technical Details --- */
+        .tech-detail { margin-bottom: 1.5rem; }
+        .tech-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; }
+        .bar-bg { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+        .bar-fill { height: 100%; background: var(--accent); border-radius: 4px; }
 
-        /* --- Contact --- */
-        .contact-box { background: var(--primary-dark); color: white; padding: 4rem 10%; text-align: center; }
-        .contact-box h2 { color: white; border-bottom: none; margin-bottom: 1rem; }
-        .contact-links a { color: #aaa; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
-        .contact-links a:hover { color: white; }
+        /* --- Footer --- */
+        footer { background: var(--primary); color: white; padding: 4rem 8%; text-align: center; }
+        .cta-btn { display: inline-block; background: var(--accent); color: white; padding: 15px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; margin-top: 2rem; transition: 0.3s; }
+        .cta-btn:hover { background: #1d4ed8; transform: scale(1.05); }
 
-        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #888; border-top: 1px solid #eee; }
-
-        /* Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .section { padding: 3rem 5%; }
+            nav { padding: 1.5rem 5%; }
+            header { padding: 4rem 5%; }
+            .summary-section { margin: 0 5% 3rem; padding: 2rem; }
+            .nav-links { display: none; } /* Simplified for single page mobile */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Sai Kumar Gurram</div>
-        <div class="contact-links" style="font-size: 0.9rem;">
-            <a href="mailto:gurramsaikumarqa@gmail.com" style="color: #333;">Email</a>
-            <a href="https://github.com/saikumargurram5" style="color: #333;">GitHub</a>
+        <div class="logo">SAI KUMAR GURRAM</div>
+        <div class="nav-links">
+            <a href="https://github.com/saikumargurram5">GitHub</a>
+            <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248">LinkedIn</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-tags">
-            <span class="tag">SDET</span>
-            <span class="tag">Playwright Specialist</span>
-            <span class="tag">AI-Assisted Testing</span>
-        </div>
-        <h1>Quality Assurance & Automation Engineering</h1>
-        <p>Expertise in building high-performance automation frameworks for the <strong>Telecom</strong> and <strong>Hospitality</strong> sectors. Focused on integrating <strong>Generative AI</strong> into the STLC to drive efficiency and total quality accountability.</p>
+    <header>
+        <h1>Ensuring Quality in <br>Complex Ecosystems.</h1>
+        <p>A Quality Engineering Specialist focused on <strong>Playwright, GenAI, and CI/CD</strong>. Bridging the gap between manual testing precision and automated speed for <strong>Telecom</strong> and <strong>Hospitality</strong> platforms.</p>
     </header>
 
+    <section class="summary-section">
+        <h2>Strategic Vision</h2>
+        <p>
+            I architect resilient automation solutions that prioritize scalability and maintenance. By integrating <strong>Generative AI</strong> into the STLC, I reduce manual overhead in test design. My expertise spans the full technical stack—from <strong>Dockerized</strong> testing environments and <strong>Jenkins</strong> pipelines to deep <strong>API validation</strong> using SoapUI and REST Assured. I don't just find bugs; I build systems that prevent them.
+        </p>
+    </section>
+
     <section class="section">
-        <h2>Domain Expertise</h2>
+        <h2>Expertise Matrix</h2>
         <div class="grid">
             <div class="card">
-                <h3>🏨 Travel & Hospitality</h3>
-                <p>Specialized in validating end-to-end booking engines, supplier API transformations (ARI/DRI), and financial feed accuracy for major travel platforms.</p>
+                <h3>Automation Architect</h3>
+                <div class="tag-cloud">
+                    <span class="skill-tag">Playwright (Java)</span>
+                    <span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">GenAI Testing</span>
+                    <span class="skill-tag">Cucumber BDD</span>
+                    <span class="skill-tag">POM</span>
+                    <span class="skill-tag">TestNG</span>
+                </div>
             </div>
             <div class="card">
-                <h3>📞 Telecom (OSS/BSS)</h3>
-                <p>Validating provisioning workflows, plan activations, and mission-critical billing systems where API parity and data integrity are vital.</p>
+                <h3>Infrastructure & API</h3>
+                <div class="tag-cloud">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Jenkins CI/CD</span>
+                    <span class="skill-tag">SoapUI</span>
+                    <span class="skill-tag">Postman</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">ReadyAPI</span>
+                </div>
             </div>
             <div class="card">
-                <h3>🤖 AI-Driven Automation</h3>
-                <p>Pioneering the use of <strong>GenAI</strong> for automated test case generation, script self-healing, and optimizing coverage for complex enterprise systems.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: var(--light-gray);">
-        <h2>Technical Arsenal</h2>
-        <div class="grid">
-            <div>
-                <div class="skill-container">
-                    <span class="skill-name">Automation (Playwright, Selenium, Java)</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
-                </div>
-                <div class="skill-container">
-                    <span class="skill-name">API Testing (SoapUI, ReadyAPI, Postman)</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
-                </div>
-                <div class="skill-container">
-                    <span class="skill-name">Framework Design (BDD Cucumber, POM)</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
-                </div>
-            </div>
-            <div>
-                <div class="skill-container">
-                    <span class="skill-name">DevOps (Jenkins, Docker, CI/CD)</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
-                </div>
-                <div class="skill-container">
-                    <span class="skill-name">Generative AI for QA</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
-                </div>
-                <div class="skill-container">
-                    <span class="skill-name">Defect Management (JIRA, Bugzilla)</span>
-                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                <h3>Manual Strategy</h3>
+                <div class="tag-cloud">
+                    <span class="skill-tag">E2E Testing</span>
+                    <span class="skill-tag">Regression</span>
+                    <span class="skill-tag">UAT</span>
+                    <span class="skill-tag">JIRA</span>
+                    <span class="skill-tag">Agile/Scrum</span>
+                    <span class="skill-tag">OSS/BSS Domain</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-box">
-        <h2>Let's build reliable software.</h2>
-        <p style="margin-bottom: 2rem; color: #94a3b8;">Available for strategic QA leadership and automation development roles.</p>
-        <div class="contact-links">
-            <a href="mailto:gurramsaikumarqa@gmail.com">Email</a> |
-            <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248">LinkedIn</a> |
-            <a href="https://github.com/saikumargurram5">GitHub</a>
+    <section class="section" style="background: #f8fafc;">
+        <h2>Technical Command</h2>
+        <div class="grid">
+            <div>
+                <div class="tech-detail">
+                    <div class="tech-label"><span>Automation (Playwright/Java)</span><span>Expert</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="tech-detail">
+                    <div class="tech-label"><span>CI/CD & DevOps (Jenkins/Docker)</span><span>Advanced</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                </div>
+            </div>
+            <div>
+                <div class="tech-detail">
+                    <div class="tech-label"><span>API Validation (SoapUI/REST)</span><span>Expert</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div>
+                </div>
+                <div class="tech-detail">
+                    <div class="tech-label"><span>Strategic Manual QA</span><span>Expert</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Sai Kumar Gurram. All Rights Reserved. | Senior QA Automation Engineer
+        <h2>Connect for Strategic QA Impact</h2>
+        <p style="margin-top: 10px; opacity: 0.8;">Currently open to Senior SDET and Quality Architect roles.</p>
+        <a href="mailto:gurramsaikumarqa@gmail.com" class="cta-btn">Email Me Directly</a>
+        <div style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5;">
+            &copy; 2026 Sai Kumar Gurram | Quality Excellence Portfolio
+        </div>
     </footer>
 
 </body>
