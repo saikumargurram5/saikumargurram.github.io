@@ -1,127 +1,171 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QA Automation Portfolio - Kumar G</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Sai Kumar Gurram | Senior SDET Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }body {
-  background: #f0f4f8;
-  color: #333;
-  line-height: 1.6;
-}
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --text: #334155;
+      --bg: #f8fafc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.7; }
+    
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    header h1 { font-size: 3rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 0.5rem; }
+    header p { font-size: 1.25rem; color: #94a3b8; font-weight: 300; max-width: 700px; margin: 0 auto; }
 
-header {
-  background: #0f172a;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-}
+    .container { max-width: 1100px; margin: -3rem auto 3rem; padding: 1rem; }
+    
+    .section {
+      background: white;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section h2::after { content: ""; height: 3px; width: 50px; background: var(--accent); border-radius: 2px; }
 
-header h1 {
-  font-size: 2.5rem;
-}
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 1.5rem;
+    }
+    .domain-card {
+      background: #f1f5f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-top: 4px solid var(--accent);
+    }
+    .domain-card h3 { margin-bottom: 0.5rem; color: var(--primary); }
 
-.container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .skill-category h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+    ul { list-style: none; }
+    ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+    ul li::before { content: "✦"; position: absolute; left: 0; color: var(--accent); }
 
-.section {
-  background: white;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .tag { background: #e2e8f0; color: #475569; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
 
-.section h2 {
-  color: #0f172a;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-}
-
-ul {
-  margin-left: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #0f172a;
-  color: white;
-}
-
+    footer { background: var(--primary); color: white; text-align: center; padding: 4rem 2rem; }
+    .contact-link { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+    
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .highlight-grid { grid-template-columns: 1fr; }
+    }
   </style>
-</head><body>
+</head>
+<body>
+
   <header>
-    <h1>Sai Kumar Gurram - QA Manual & Automation Test Engineer</h1>
-    <p>Passionate about quality, automation, and continuous improvement</p>
-  </header>  <div class="container">
+    <h1>Sai Kumar Gurram</h1>
+    <p>Strategic SDET & Quality Architect | Expert in Telecom & Hospitality Domains</p>
+    <div class="tag-cloud" style="justify-content: center; margin-top: 2rem;">
+      <span class="tag" style="background: var(--accent); color: white;">Playwright (Java)</span>
+      <span class="tag" style="background: var(--accent); color: white;">GenAI Testing</span>
+      <span class="tag" style="background: var(--accent); color: white;">SoapUI / ReadyAPI</span>
+      <span class="tag" style="background: var(--accent); color: white;">CI/CD Pipelines</span>
+    </div>
+  </header>
+
+  <div class="container">
+    
     <div class="section">
-      <h2>Professional Summary</h2>
-      <p>Detail-oriented QA Engineer with expertise in Manual and Automation Testing. Proven experience across the complete SDLC and STLC, ensuring software products meet the highest quality standards.</p>
-    </div><div class="section">
-  <h2>Manual Testing Expertise</h2>
-  <ul>
-    <li>SDLC, STLC, Defect Life Cycle</li>
-    <li>Test Case Design Techniques</li>
-    <li>Functional, End-to-End, Sanity, Smoke, Regression, Adhoc, and UI Testing</li>
-    <li>Component, Integration, Compatibility, Usability, Local & Global Testing</li>
-    <li>Environment Testing, Pair Testing, Parity Testing, Buddy Testing</li>
-    <li>Strong analytical and problem-solving skills</li>
-  </ul>
-</div>
+      <h2>Professional Profile</h2>
+      <p>I am a <strong>Senior SDET</strong> with a deep focus on building resilient, scalable automation ecosystems. My philosophy centers on <strong>Technical Empathy</strong>—understanding business needs to deliver high-precision testing. I specialize in the <strong>Telecom</strong> and <strong>Hotel</strong> industries, moving beyond standard automation to include <strong>AI-assisted script generation</strong> and <strong>Self-Healing frameworks</strong>.</p>
+    </div>
 
-<div class="section">
-  <h2>Automation Tools & Technologies</h2>
-  <ul>
-    <li>Selenium with Java, TestNG, Cucumber BDD, Page Object Model</li>
-    <li>Hybrid & Data Driven Framework Design and Maintenance</li>
-    <li>Build & CI/CD Tools: Maven, Jenkins, GIT</li>
-    <li>API Testing: Postman, Rest Assured, SoapUI, ReadyAPI, Swagger</li>
-    <li>Cross-Browser & Parallel Testing</li>
-    <li>Good exposure to Agile, Scrum, and defect tracking tools (JIRA, Bugzilla)</li>
-  </ul>
-</div>
+    <div class="section">
+      <h2>Industry Expertise</h2>
+      <div class="highlight-grid">
+        <div class="domain-card">
+          <h3>🏨 Hospitality & Travel Systems</h3>
+          <p>End-to-end validation of complex booking engines. Experienced in <strong>GDS/PMS integrations</strong>, supplier API transformations (ARI/DRI), and verifying <strong>financial feeds (SAP)</strong> for global travel applications.</p>
+        </div>
+        <div class="domain-card">
+          <h3>📞 Telecom (OSS/BSS)</h3>
+          <p>Provisioning, billing, and activation workflow expert. Proficient in testing high-availability systems where <strong>data integrity</strong> and <strong>API parity</strong> are critical for plan activations.</p>
+        </div>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/saikumargurram5/TravellSpringBootPracticeApplication.git">Spring Boot Application Java Backend</a></li>
-    <li><a href="https://github.com/saikumargurram5/OpenMRS.git">Selenium Project</a></li>
-    <li><a href="https://github.com/saikumargurram5/CucumberProjectOrangeHRMApplication.git">Selenium Hybrid Framework</a></li>
-    <li><a href="https://github.com/saikumargurram5/CucumberSeleniumFramework.git">Cucumber Project</a></li>
-  </ul>
-  <p><strong>Travel Domain Project:</strong> Worked on a Hotel Booking Application involving integrations with various channel managers and suppliers. Validated supplier-side API responses and transformations from ARI to DRI, SAP financial feeds, and booking workflows. Conducted thorough validation of End-to-End flows, Sanity, Regression, and functional tests including RateHawk and HRESA supplier onboarding and TGX implementations.</p>
-  <p><strong>Telecom Domain Project:</strong> Involved in validating telecom services platform used for provisioning, billing, and plan activations. Performed API and UI validations, focused on regression, compatibility, and global testing scenarios. Extensively worked on SOAP and REST-based services using SoapUI, ReadyAPI, and Postman. Executed pair testing, buddy testing, and reported defects through JIRA while participating in Agile ceremonies.</p>
-  <p><strong>OrangeHRM Automation Project:</strong> Designed a hybrid framework integrating Selenium, Cucumber BDD, and TestNG for OrangeHRM web application. Automated login, employee creation, and report generation workflows. Maintained scripts using Page Object Model and used Maven for build automation and Jenkins for scheduled test runs.</p>
-  <p><strong>Healthcare OpenMRS Testing:</strong> Developed test scenarios for patient registration and visit workflows in OpenMRS, an open-source hospital management system. Used Selenium WebDriver for UI validations and Postman for validating REST API calls for appointment and medical records modules.</p>
-  <p><strong>Travel Booking Backend App:</strong> Built and tested RESTful APIs for a Spring Boot-based travel application. Verified booking, authentication, and search endpoints using Postman and Rest Assured. Ensured test coverage for negative scenarios, edge cases, and input validation.</p>
-</div>
+    <div class="section">
+      <h2>Strategic Skillset</h2>
+      <div class="skills-wrapper">
+        <div class="skill-category">
+          <h3>Core Automation</h3>
+          <ul>
+            <li><strong>Playwright & Selenium</strong> (Java)</li>
+            <li><strong>GenAI Testing:</strong> AI-driven test case design</li>
+            <li><strong>Cucumber BDD</strong> & TestNG</li>
+            <li>Page Object Model (POM)</li>
+            <li><strong>Parallel Execution</strong> & Grid Setup</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>API & Middleware</h3>
+          <ul>
+            <li><strong>SoapUI & ReadyAPI</strong></li>
+            <li>REST Assured & Postman</li>
+            <li><strong>JSON/XML Schema</strong> Validation</li>
+            <li>Mocking Service Dependencies</li>
+            <li><strong>Swagger / OpenAPI</strong> Specs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps & Manual</h3>
+          <ul>
+            <li><strong>Jenkins</strong> CI/CD (Pipeline as Code)</li>
+            <li><strong>Docker</strong> Containerization</li>
+            <li>Advanced JIRA / Defect Lifecycle</li>
+            <li><strong>Agile/Scrum</strong> Leadership</li>
+            <li>Exploratory & Pair Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>Soft Skills</h2>
-  <ul>
-    <li>Effective communication and collaboration with developers and business teams</li>
-    <li>Time management and multitasking in fast-paced environments</li>
-    <li>Proactive learner and team player</li>
-  </ul>
-</div>
+    <div class="section" style="text-align: center;">
+      <h2>Let's Connect</h2>
+      <p style="margin-bottom: 1.5rem;">I am currently open to discussing innovative QA strategies and high-impact SDET roles.</p>
+      <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <a href="mailto:gurramsaikumarqa@gmail.com" class="contact-link">Email Me</a>
+        <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248" class="contact-link">LinkedIn Profile</a>
+        <a href="https://github.com/saikumargurram5" class="contact-link">GitHub Portfolio</a>
+      </div>
+    </div>
 
-<div class="section">
-  <h2>Contact</h2>
-  <p>Email: gurramsaikumarqa@gmail.com</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">YOURPROFILE</a></p>
-  <p>GitHub: <a href="https://github.com/saikumargurram5">github.com/saikumargurram5</a></p>
-</div>
+  </div>
 
-  </div>  <footer>
-    <p>&copy; 2025 Kumar G | QA Automation Portfolio</p>
+  <footer>
+    <p>&copy; 2026 Sai Kumar Gurram | Senior QA Automation Engineer</p>
+    <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">Built with modern SDET principles and AI-assisted design.</p>
   </footer>
-</body></html>
+
+</body>
+</html>
