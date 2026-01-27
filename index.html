@@ -1,171 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Kumar Gurram | Senior SDET Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0f172a;
-      --accent: #3b82f6;
-      --text: #334155;
-      --bg: #f8fafc;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background: var(--bg); color: var(--text); line-height: 1.7; }
-    
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 5rem 2rem;
-      text-align: center;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    }
-    header h1 { font-size: 3rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 0.5rem; }
-    header p { font-size: 1.25rem; color: #94a3b8; font-weight: 300; max-width: 700px; margin: 0 auto; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Kumar Gurram | Senior SDET Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --primary-dark: #1a1a1a;
+            --accent-blue: #0056b3;
+            --light-gray: #f4f7f6;
+            --text-main: #333333;
+        }
 
-    .container { max-width: 1100px; margin: -3rem auto 3rem; padding: 1rem; }
-    
-    .section {
-      background: white;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-    .section h2 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section h2::after { content: ""; height: 3px; width: 50px; background: var(--accent); border-radius: 2px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
 
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 1.5rem;
-    }
-    .domain-card {
-      background: #f1f5f9;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-top: 4px solid var(--accent);
-    }
-    .domain-card h3 { margin-bottom: 0.5rem; color: var(--primary); }
+        /* --- Navigation / Header --- */
+        nav {
+            background: #fff;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary-dark); font-size: 1.2rem; }
 
-    .skills-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .skill-category h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-    ul { list-style: none; }
-    ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
-    ul li::before { content: "✦"; position: absolute; left: 0; color: var(--accent); }
+        /* --- Hero Section --- */
+        .hero {
+            padding: 6rem 10%;
+            background: linear-gradient(to right, #ffffff, #f9f9f9);
+            text-align: left;
+        }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: 3.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: #666; max-width: 800px; margin-bottom: 2rem; }
+        .hero-tags .tag {
+            display: inline-block;
+            background: var(--light-gray);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
 
-    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
-    .tag { background: #e2e8f0; color: #475569; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        /* --- Sections Layout --- */
+        .section { padding: 4rem 10%; }
+        .section h2 { 
+            font-family: 'Poppins', sans-serif; 
+            font-size: 2rem; 
+            margin-bottom: 2.5rem; 
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--accent-blue);
+            display: inline-block;
+        }
 
-    footer { background: var(--primary); color: white; text-align: center; padding: 4rem 2rem; }
-    .contact-link { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
-    
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .highlight-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+        /* --- Expertise Grid --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #eee;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); transform: translateY(-5px); }
+        .card h3 { margin-bottom: 1rem; color: var(--accent-blue); }
+
+        /* --- Skill Bars (Google Site Style) --- */
+        .skill-container { margin-bottom: 1.5rem; }
+        .skill-name { font-weight: 600; margin-bottom: 5px; display: block; }
+        .skill-bar { height: 8px; background: #eee; border-radius: 10px; position: relative; }
+        .skill-fill { height: 100%; background: var(--accent-blue); border-radius: 10px; }
+
+        /* --- Contact --- */
+        .contact-box { background: var(--primary-dark); color: white; padding: 4rem 10%; text-align: center; }
+        .contact-box h2 { color: white; border-bottom: none; margin-bottom: 1rem; }
+        .contact-links a { color: #aaa; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
+        .contact-links a:hover { color: white; }
+
+        footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #888; border-top: 1px solid #eee; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section { padding: 3rem 5%; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Sai Kumar Gurram</h1>
-    <p>Strategic SDET & Quality Architect | Expert in Telecom & Hospitality Domains</p>
-    <div class="tag-cloud" style="justify-content: center; margin-top: 2rem;">
-      <span class="tag" style="background: var(--accent); color: white;">Playwright (Java)</span>
-      <span class="tag" style="background: var(--accent); color: white;">GenAI Testing</span>
-      <span class="tag" style="background: var(--accent); color: white;">SoapUI / ReadyAPI</span>
-      <span class="tag" style="background: var(--accent); color: white;">CI/CD Pipelines</span>
-    </div>
-  </header>
-
-  <div class="container">
-    
-    <div class="section">
-      <h2>Professional Profile</h2>
-      <p>I am a <strong>Senior SDET</strong> with a deep focus on building resilient, scalable automation ecosystems. My philosophy centers on <strong>Technical Empathy</strong>—understanding business needs to deliver high-precision testing. I specialize in the <strong>Telecom</strong> and <strong>Hotel</strong> industries, moving beyond standard automation to include <strong>AI-assisted script generation</strong> and <strong>Self-Healing frameworks</strong>.</p>
-    </div>
-
-    <div class="section">
-      <h2>Industry Expertise</h2>
-      <div class="highlight-grid">
-        <div class="domain-card">
-          <h3>🏨 Hospitality & Travel Systems</h3>
-          <p>End-to-end validation of complex booking engines. Experienced in <strong>GDS/PMS integrations</strong>, supplier API transformations (ARI/DRI), and verifying <strong>financial feeds (SAP)</strong> for global travel applications.</p>
+    <nav>
+        <div class="logo">Sai Kumar Gurram</div>
+        <div class="contact-links" style="font-size: 0.9rem;">
+            <a href="mailto:gurramsaikumarqa@gmail.com" style="color: #333;">Email</a>
+            <a href="https://github.com/saikumargurram5" style="color: #333;">GitHub</a>
         </div>
-        <div class="domain-card">
-          <h3>📞 Telecom (OSS/BSS)</h3>
-          <p>Provisioning, billing, and activation workflow expert. Proficient in testing high-availability systems where <strong>data integrity</strong> and <strong>API parity</strong> are critical for plan activations.</p>
-        </div>
-      </div>
-    </div>
+    </nav>
 
-    <div class="section">
-      <h2>Strategic Skillset</h2>
-      <div class="skills-wrapper">
-        <div class="skill-category">
-          <h3>Core Automation</h3>
-          <ul>
-            <li><strong>Playwright & Selenium</strong> (Java)</li>
-            <li><strong>GenAI Testing:</strong> AI-driven test case design</li>
-            <li><strong>Cucumber BDD</strong> & TestNG</li>
-            <li>Page Object Model (POM)</li>
-            <li><strong>Parallel Execution</strong> & Grid Setup</li>
-          </ul>
+    <header class="hero">
+        <div class="hero-tags">
+            <span class="tag">SDET</span>
+            <span class="tag">Playwright Specialist</span>
+            <span class="tag">AI-Assisted Testing</span>
         </div>
-        <div class="skill-category">
-          <h3>API & Middleware</h3>
-          <ul>
-            <li><strong>SoapUI & ReadyAPI</strong></li>
-            <li>REST Assured & Postman</li>
-            <li><strong>JSON/XML Schema</strong> Validation</li>
-            <li>Mocking Service Dependencies</li>
-            <li><strong>Swagger / OpenAPI</strong> Specs</li>
-          </ul>
+        <h1>Quality Assurance & Automation Engineering</h1>
+        <p>Expertise in building high-performance automation frameworks for the <strong>Telecom</strong> and <strong>Hospitality</strong> sectors. Focused on integrating <strong>Generative AI</strong> into the STLC to drive efficiency and total quality accountability.</p>
+    </header>
+
+    <section class="section">
+        <h2>Domain Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏨 Travel & Hospitality</h3>
+                <p>Specialized in validating end-to-end booking engines, supplier API transformations (ARI/DRI), and financial feed accuracy for major travel platforms.</p>
+            </div>
+            <div class="card">
+                <h3>📞 Telecom (OSS/BSS)</h3>
+                <p>Validating provisioning workflows, plan activations, and mission-critical billing systems where API parity and data integrity are vital.</p>
+            </div>
+            <div class="card">
+                <h3>🤖 AI-Driven Automation</h3>
+                <p>Pioneering the use of <strong>GenAI</strong> for automated test case generation, script self-healing, and optimizing coverage for complex enterprise systems.</p>
+            </div>
         </div>
-        <div class="skill-category">
-          <h3>DevOps & Manual</h3>
-          <ul>
-            <li><strong>Jenkins</strong> CI/CD (Pipeline as Code)</li>
-            <li><strong>Docker</strong> Containerization</li>
-            <li>Advanced JIRA / Defect Lifecycle</li>
-            <li><strong>Agile/Scrum</strong> Leadership</li>
-            <li>Exploratory & Pair Testing</li>
-          </ul>
+    </section>
+
+    <section class="section" style="background: var(--light-gray);">
+        <h2>Technical Arsenal</h2>
+        <div class="grid">
+            <div>
+                <div class="skill-container">
+                    <span class="skill-name">Automation (Playwright, Selenium, Java)</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-container">
+                    <span class="skill-name">API Testing (SoapUI, ReadyAPI, Postman)</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-container">
+                    <span class="skill-name">Framework Design (BDD Cucumber, POM)</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+            </div>
+            <div>
+                <div class="skill-container">
+                    <span class="skill-name">DevOps (Jenkins, Docker, CI/CD)</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-container">
+                    <span class="skill-name">Generative AI for QA</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-container">
+                    <span class="skill-name">Defect Management (JIRA, Bugzilla)</span>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div class="section" style="text-align: center;">
-      <h2>Let's Connect</h2>
-      <p style="margin-bottom: 1.5rem;">I am currently open to discussing innovative QA strategies and high-impact SDET roles.</p>
-      <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-        <a href="mailto:gurramsaikumarqa@gmail.com" class="contact-link">Email Me</a>
-        <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248" class="contact-link">LinkedIn Profile</a>
-        <a href="https://github.com/saikumargurram5" class="contact-link">GitHub Portfolio</a>
-      </div>
-    </div>
+    <section class="contact-box">
+        <h2>Let's build reliable software.</h2>
+        <p style="margin-bottom: 2rem; color: #94a3b8;">Available for strategic QA leadership and automation development roles.</p>
+        <div class="contact-links">
+            <a href="mailto:gurramsaikumarqa@gmail.com">Email</a> |
+            <a href="https://www.linkedin.com/in/saikumar-gurram-2a9729248">LinkedIn</a> |
+            <a href="https://github.com/saikumargurram5">GitHub</a>
+        </div>
+    </section>
 
-  </div>
-
-  <footer>
-    <p>&copy; 2026 Sai Kumar Gurram | Senior QA Automation Engineer</p>
-    <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">Built with modern SDET principles and AI-assisted design.</p>
-  </footer>
+    <footer>
+        &copy; 2026 Sai Kumar Gurram. All Rights Reserved. | Senior QA Automation Engineer
+    </footer>
 
 </body>
 </html>
